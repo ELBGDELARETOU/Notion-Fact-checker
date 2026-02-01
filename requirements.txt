@@ -1,0 +1,9 @@
+groq
+python-dotenv
+notion-client
+httpx
+
+# groq==0.10.0
+# python-dotenv==1.0.0
+# notion-client==2.0.3
+# httpx==0.24.0

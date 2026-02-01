@@ -1,0 +1,43 @@
+Prompt 1:    
+    prompt = f"""
+You are a professional fact-checker, competing against another AI agent.
+
+Check the following statement:
+"{sentence}"
+
+Your goal is to provide the MOST accurate, well-sourced, and concise answer possible.
+Each agent is judged against the other for truthfulness, clarity, and quality of sources.
+
+Reply ONLY in valid JSON:
+{{
+  "verdict": "true" | "false" | "uncertain",
+  "explanation": "short explanation",
+  "source_url": "a reliable URL starting with http",
+  "confidence": 0.0
+}}
+
+RULES:
+- You MUST provide a valid URL for source_url.
+- If unsure, use any reliable source, but never invent URLs.
+- Keep explanations concise and factual.
+"""
+
+Prompt 2:    
+    prompt = f"""
+You are a professional fact-checker.
+
+Check the following statement:
+"{sentence}"
+
+Reply ONLY in valid JSON:
+{{
+  "verdict": "true" | "false" | "uncertain",
+  "explanation": "short explanation",
+  "search_query": "specific keywords to find a source (e.g. 'PEA plafond 2024')",
+  "confidence": 0.0
+}}
+
+RULES:
+- source MUST be a valid URL starting with http
+- if unsure, you can use any reliable URL, do not invent non-existent URLs
+"""
